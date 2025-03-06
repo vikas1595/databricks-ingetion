@@ -15,6 +15,7 @@ def local_spark_session():
             "org.apache.spark.sql.delta.catalog.DeltaCatalog",
         )
         .master("local[2]")
+        .appName('local-app')
     )
     return configure_spark_with_delta_pip(builder).getOrCreate()
 
