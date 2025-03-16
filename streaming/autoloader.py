@@ -14,7 +14,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_json, expr
 from pathlib import Path
 from delta.tables import DeltaTable
-from spark_session import get_spark_session
+from src.spark_session import get_spark_session
 
 
 class MessageFormat:
