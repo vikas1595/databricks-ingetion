@@ -18,7 +18,7 @@ databricks-ingetion/
 ### Modules
 
 - **spark_session.py**: Contains the function to create a local Spark session configured with Delta Lake.
-- **loader.py**: Contains the `BronzeLoader` class for loading data from various file types into Delta tables.
+- **loader.py**: Contains the `DataLoaderder` class for loading data from various file types into Delta tables.
 - **helper.py**: Contains helper functions for setting up database schemas and creating Spark `StructType` schemas.
 
 ## Usage
@@ -35,10 +35,10 @@ spark = local_spark_session()
 
 ### Loading Data
 
-To load data into a Delta table, use the `BronzeLoader` class from `loader.py`:
+To load data into a Delta table, use the `DataLoaderder` class from `loader.py`:
 
 ```python
-from src.loader import BronzeLoader
+from src.loader import DataLoaderder
 from pathlib import Path
 from pyspark.sql.types import StructType, StructField, StringType
 
@@ -47,7 +47,7 @@ schema = StructType([
     StructField("column2", StringType(), True),
 ])
 
-loader = BronzeLoader(
+loader = DataLoaderder(
     file_type="csv",
     input_file_path=Path("/path/to/input/file.csv"),
     schema=schema,
